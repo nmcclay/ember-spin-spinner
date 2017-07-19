@@ -19,7 +19,7 @@ module.exports = {
      * Any addon that wants to use this addon as a nested addon dependency needs
      * to do the below imports itself in its included hook.
      */
-    if (typeof(app.import) === 'function') {
+    if (typeof(app.import) === 'function' && app.bowerDirectory) {
       var spinPath = path.join(app.bowerDirectory, 'spin.js');
 
       app.import(path.join(spinPath, 'spin.js'));
